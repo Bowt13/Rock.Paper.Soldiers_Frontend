@@ -1,0 +1,66 @@
+.text{
+  margin-top: 0.5rem;
+  margin-left: 3rem;
+  color: white;
+  font-size: 1.5rem;
+  overflow: auto;
+}
+
+.button-container{
+  overflow: scroll;
+  margin-top: -1.5rem;
+  margin-left: 1.9rem;
+}
+
+.offense{
+  height: 6rem;
+  width: 19rem;
+  background-color: red;
+  font-size: 4rem;
+  color: white;
+}
+
+.melee{
+  height: 6rem;
+  width: 19rem;
+  background-color: red;
+  font-size: 4rem;
+  color: white;
+}
+
+.spell{
+  margin-left: 1.5rem;
+  height: 6rem;
+  width: 19rem;
+  background-color: blue;
+  font-size: 4rem;
+  color: white;
+}
+
+.ranged{
+  margin-left: 1.5rem;
+  height: 6rem;
+  width: 19rem;
+  background-color: green;
+  font-size: 4rem;
+  color: white;
+}
+
+.defence{
+  margin-left: 1.5rem;
+  height: 6rem;
+  width: 19rem;
+  background-color: blue;
+  font-size: 4rem;
+  color: white;
+}
+
+.back{
+  margin-left: 4rem;
+  margin-top: 1rem;
+  height: 3rem;
+  width: 52rem;
+  background-color: pink;
+  font-size: 2rem;
+  color: white;
+}

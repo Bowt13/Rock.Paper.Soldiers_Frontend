@@ -1,0 +1,72 @@
+@keyframes move-right {
+    0%   {left:0px; top:0px;}
+    50%  {left:-19.5rem; top:0px;}
+    100%   {left:0px; top:0px;}
+}
+
+@keyframes move-left {
+    0%   {left:0px; top:0px;}
+    50%  {left:19.5rem; top:0px;}
+    100%   {left:0px; top:0px;}
+}
+
+.player-right-move{
+  height: 7rem;
+  position: absolute;
+  margin-top: 12rem;
+  margin-left: 80%;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: FlipH;
+  animation-name: move-right;
+  animation-duration: 4s;
+}
+
+.player-left-move{
+  height: 7rem;
+  position: absolute;
+  margin-top: 12rem;
+  margin-left: 10rem;
+  animation-name: move-left;
+  animation-duration: 4s;
+}
+
+.player-right-idle{
+  height: 7rem;
+  position: absolute;
+  margin-top: 12rem;
+  margin-left: 80%;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: FlipH;
+}
+
+.player-left-idle{
+  height: 7rem;
+  position: absolute;
+  margin-top: 12rem;
+  margin-left: 10rem;
+}
+
+.blue{
+  width: 100%;
+  height: 15rem;
+  margin-top: 0rem;
+  background-color: blue;
+}
+
+.forest{
+  position: absolute;
+  width: 100%;
+  height: 19rem;
+  margin-top: -19rem;
+  background-color: green;
+  background-image: url('../../img/backgrounds/forrest.gif');
+  background-size: 101.5% 100%;
+  background-repeat: no-repeat;
+  background-position: absolute;
+}
