@@ -7,10 +7,7 @@ import MenuBar from './Game/MenuBar'
 
 
 //CLASSES
-const cleric = require ('../img/classes/cleric.gif')
-const fighter = require ('../img/classes/fighter.gif')
-const fightermove = require ('../img/classes/fightermove.gif')
-const mage = require ('../img/classes/mage.gif')
+
 
 export default class Page extends PureComponent {
   static propTypes = {
@@ -32,7 +29,7 @@ export default class Page extends PureComponent {
   render() {
     return (
       <div className='game'>
-        <BattleArena background='forest' player1={mage} player2={fighter}/>
+        <BattleArena background='forest'/>
         <MenuBar/>
       </div>
     )
