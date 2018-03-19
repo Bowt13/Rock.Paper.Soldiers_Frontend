@@ -6,10 +6,6 @@ import HealthBar from '../../components/Game/HealthBar'
 //STYLING
 import './BattleArena.css'
 
-//CLASSES
-
-
-
 export default class BattleArena extends PureComponent {
   static propTypes = {
     background: PropTypes.string.isRequired,
@@ -17,8 +13,8 @@ export default class BattleArena extends PureComponent {
     player2: PropTypes.string.isRequired,
   }
   state = {
-    player1status :'idle',
-    player2status :'idle'
+    player1status :'move',
+    player2status :'move'
   }
 
 CalulatePercentage = (totalDamage) => {

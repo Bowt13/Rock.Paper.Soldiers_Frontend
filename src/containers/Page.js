@@ -9,12 +9,11 @@ import MenuBar from './Game/MenuBar'
 //CLASSES
 const cleric = require ('../img/classes/cleric.gif')
 const fighter = require ('../img/classes/fighter.gif')
+const fightermove = require ('../img/classes/fightermove.gif')
+const mage = require ('../img/classes/mage.gif')
 
 export default class Page extends PureComponent {
   static propTypes = {
-  }
-  state = {
-    page: 'battle'
   }
 
   toggleState = (stateString) => {
@@ -24,19 +23,17 @@ export default class Page extends PureComponent {
   }
 
   componentWillMount() {
-    this.toggleState = this.toggleState.bind(this)
+    if (this.props.authenticated) {
+      if (this.props.game === null) this.props.getGames()
+      if (this.props.users === null) this.props.getUsers()
+    }
   }
 
   render() {
     return (
       <div className='game'>
-      {
-        this.state.page === 'battle' &&
-        <div>
-        <BattleArena background='forest' player1={cleric} player2={fighter}/>
+        <BattleArena background='forest' player1={mage} player2={fighter}/>
         <MenuBar/>
-        </div>
-      }
       </div>
     )
   }

@@ -1,12 +1,12 @@
 @keyframes move-right {
     0%   {left:0px; top:0px;}
-    50%  {left:-19.5rem; top:0px;}
+    50%  {left:-19rem; top:0px;}
     100%   {left:0px; top:0px;}
 }
 
 @keyframes move-left {
     0%   {left:0px; top:0px;}
-    50%  {left:19.5rem; top:0px;}
+    50%  {left:19rem; top:0px;}
     100%   {left:0px; top:0px;}
 }
 
@@ -15,11 +15,6 @@
   position: absolute;
   margin-top: 12rem;
   margin-left: 80%;
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-  filter: FlipH;
   animation-name: move-right;
   animation-duration: 4s;
 }
@@ -27,8 +22,13 @@
 .player-left-move{
   height: 7rem;
   position: absolute;
-  margin-top: 12rem;
+  margin-top: 11.5rem;
   margin-left: 10rem;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: FlipH;
   animation-name: move-left;
   animation-duration: 4s;
 }
@@ -38,18 +38,18 @@
   position: absolute;
   margin-top: 12rem;
   margin-left: 80%;
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-  filter: FlipH;
 }
 
 .player-left-idle{
   height: 7rem;
   position: absolute;
-  margin-top: 12rem;
+  margin-top: 11.5rem;
   margin-left: 10rem;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: FlipH;
 }
 
 .blue{
