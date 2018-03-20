@@ -29,7 +29,7 @@ export default class Page extends PureComponent {
   render() {
     return (
       <div className='game'>
-        <BattleArena background='forest'/>
+        <BattleArena background='forest' player1='fighter' player2='mage'/>
         <MenuBar/>
       </div>
     )
