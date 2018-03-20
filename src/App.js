@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div classname='main'>
+        <div className='main'>
           <TopBar />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/logout" component={LogoutPage} />
