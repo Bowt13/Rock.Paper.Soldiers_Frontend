@@ -61,7 +61,7 @@ timerAttackType = (x, y) => {
         <div>
           <Player side='left' character={this.props.player1} imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
           <Player side='right' character={this.props.player2} imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-          {this.timerPlayerState('attack', 400)}
+          {this.timerPlayerState('attack', 350)}
         </div>
         }
         {this.state.playerStatus === 'move' && this.state.attackType === 'spell' &&

@@ -10,6 +10,10 @@ import Typography from 'material-ui/Typography'
 import {withRouter} from 'react-router'
 import './GamesList.css'
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 class GamesList extends PureComponent {
   componentWillMount() {
     if (this.props.authenticated) {
@@ -20,14 +24,13 @@ class GamesList extends PureComponent {
 
   renderGame = (game) => {
     const {users, history} = this.props
-
     return (<Card key={game.id} className="game-card">
       <CardContent>
         <Typography color="textSecondary">
           This game is played by&nbsp;
           {
             game.players
-              .map(player => users[player.userId].firstName)
+              .map(player => users[player.userId].username.capitalize())
               .join(' and ')
           }
         </Typography>
