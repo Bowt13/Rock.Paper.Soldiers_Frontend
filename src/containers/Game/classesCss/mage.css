@@ -1,0 +1,214 @@
+
+/* ANIMATIONS */
+{}
+  @keyframes move-right {
+      0%   {left:0px; top:0px;}
+      100%  {left:-18.1rem; top:0px;}
+  }
+
+  @keyframes move-left {
+      0%   {left:0px; top:0px;}
+      100%  {left:18.1rem; top:0px;}
+  }
+
+  @keyframes move-right-back{
+      0%  {left:-18.1rem; top:0px;}
+      100%   {left:0px; top:0px;}
+  }
+
+  @keyframes move-left-back {
+      0%  {left:18.1rem; top:0px;}
+      100%   {left:0px; top:0px;}
+  }
+
+/* MOVE */
+{}
+  .mage-right-move-melee{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+    animation-name: move-right;
+    animation-duration: 0.5s;
+  }
+
+  .mage-left-move-melee{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 10rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+    animation-name: move-left;
+    animation-duration: 0.5s;
+  }
+
+  .mage-right-moveback-melee{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+    animation-name: move-right-back;
+    animation-duration: 0.5s;
+  }
+
+  .mage-left-moveback-melee{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 10rem;
+    animation-name: move-left-back;
+    animation-duration: 0.5s;
+  }
+
+  .mage-right-move-spell{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+  }
+
+  .mage-left-move-spell{
+    height: 10.5rem;
+    position: absolute;
+    margin-top: 8rem;
+    margin-left: 9.3rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+  }
+
+  .mage-right-moveback-spell{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+  }
+
+  .mage-left-moveback-spell{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 10rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+  }
+
+  .mage-right-move-ranged{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+    animation-name: move-right;
+    animation-duration: 0.5s;
+  }
+
+  .mage-left-move-ranged{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 10rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+    animation-name: move-left;
+    animation-duration: 0.5s;
+  }
+
+  .mage-right-moveback-ranged{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+    animation-name: move-right-back;
+    animation-duration: 0.5s;
+  }
+
+  .mage-left-moveback-ranged{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 10rem;
+    animation-name: move-left-back;
+    animation-duration: 0.5s;
+  }
+/* IDLE */
+{}
+  .mage-right-idle{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+  }
+
+  .mage-left-idle{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 10rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+  }
+
+/* ATTACKS */
+{}
+  .mage-right-attack-melee{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 32rem;
+  }
+
+  .mage-right-attack-spell{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 50rem;
+  }
+
+  .mage-left-attack-melee{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 28rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+  }
+
+  .mage-left-attack-spell{
+    height: 8rem;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 10rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+  }
