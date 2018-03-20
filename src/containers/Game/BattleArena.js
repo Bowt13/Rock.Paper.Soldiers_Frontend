@@ -6,18 +6,6 @@ import HealthBar from '../../components/Game/HealthBar'
 //STYLING
 import './BattleArena.css'
 
-//CLASSES
-//cleric
-const clericidle = require ('../../img/classes/cleric.gif')
-//fighter
-const fighteridle = require ('../../img/classes/fighter.gif')
-const fightermove = require ('../../img/classes/fightermove.gif')
-const fighterattack = require ('../../img/classes/fighterattack.gif')
-//mage
-const mageidle = require ('../../img/classes/mage.gif')
-const magemove = require ('../../img/classes/magemove.gif')
-const mageattack = require ('../../img/classes/mageattack.gif')
-
 export default class BattleArena extends PureComponent {
   static propTypes = {
     background: PropTypes.string.isRequired,
@@ -26,55 +14,61 @@ export default class BattleArena extends PureComponent {
   }
   state = {
     playerStatus :'idle',
+    attackType: 'melee',
   }
 
 calulatePercentage = (totalDamage) => {
   const fullHealth = 10
   return ((fullHealth-totalDamage)*(fullHealth))
 }
-toggleState = (stateString) => {
+
+togglePlayerState = (stateString) => {
   this.setState({
     playerStatus: stateString
   })
 }
 
+toggleAttacktype = (stateString) => {
+  this.setState({
+    playerStatus: stateString
+  })
+}
+
+timerPlayerState = (x, y) => {
+  setTimeout(_ => this.togglePlayerState(x), y);
+}
+
   render() {
     return (
       <div className={this.props.background}>
+        <HealthBar side='left' percentage={this.calulatePercentage(0)}/>
+        <HealthBar side='right' percentage={this.calulatePercentage(0)}/>
         {this.state.playerStatus === 'idle' &&
         <div>
-          <HealthBar side='left' percentage={this.calulatePercentage(0)}/>
-          <Player side='left' imgSrc={fighteridle} status={this.state.playerStatus}/>
-          <HealthBar side='right' percentage={this.calulatePercentage(0)}/>
-          <Player side='right' imgSrc={mageidle} status={this.state.playerStatus}/>
-          <button onClick={_ => this.toggleState('move')}/>
+          <Player side='left' imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          <Player side='right' imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          {this.timerPlayerState('move', 450)}
         </div>
         }
         {this.state.playerStatus === 'move' &&
         <div>
-          <HealthBar side='left' percentage={this.calulatePercentage(0)}/>
-          <Player side='left' imgSrc={fightermove} status={this.state.playerStatus}/>
-          <HealthBar side='right' percentage={this.calulatePercentage(0)}/>
-          <Player side='right' imgSrc={magemove} status={this.state.playerStatus}/>
-          <button onClick={_ => this.toggleState('attack')}/>
+          <Player side='left' imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          <Player side='right' imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          {this.timerPlayerState('attack', 450)}
         </div>
         }
         {this.state.playerStatus === 'attack' &&
         <div>
-          <HealthBar side='left' percentage={this.calulatePercentage(0)}/>
-          <Player side='left' imgSrc={fighterattack} status={this.state.playerStatus}/>
-          <HealthBar side='right' percentage={this.calulatePercentage(0)}/>
-          <Player side='right' imgSrc={mageattack} status={this.state.playerStatus}/>
-          <button onClick={_ => this.toggleState('moveback')}/>
+          <Player side='left' imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          <Player side='right' imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          {this.timerPlayerState('moveback', 400)}
         </div>
         }
         {this.state.playerStatus === 'moveback' &&
         <div>
-          <HealthBar side='left' percentage={this.calulatePercentage(2)}/>
-          <Player side='left' imgSrc={fightermove} status={this.state.playerStatus}/>
-          <HealthBar side='right' percentage={this.calulatePercentage(0)}/>
-          <Player side='right' imgSrc={magemove} status={this.state.playerStatus}/>
-          <button onClick={_ => this.toggleState('idle')}/>
+          <Player side='left' imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          <Player side='right' imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
+          {this.timerPlayerState('idle', 500)}
         </div>
         }
       </div>
