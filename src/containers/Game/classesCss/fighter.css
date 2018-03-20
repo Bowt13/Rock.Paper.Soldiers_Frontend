@@ -70,10 +70,10 @@
   }
 
   .fighter-right-move-spell{
-    height: 8rem;
+    height: 10.5rem;
     position: absolute;
-    margin-top: 11rem;
-    margin-left: 50.7rem;
+    margin-top: 8rem;
+    margin-left: 47.3rem;
   }
 
   .fighter-left-move-spell{
@@ -91,7 +91,7 @@
   .fighter-right-moveback-spell{
     height: 8rem;
     position: absolute;
-    margin-top: 9rem;
+    margin-top: 11rem;
     margin-left: 50rem;
   }
 

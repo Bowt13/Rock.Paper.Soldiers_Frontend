@@ -10,7 +10,6 @@ import {userId} from '../jwt'
 
 export class Page extends PureComponent {
   static propTypes = {
-    player1: PropTypes.string.isRequired,
   }
 
   toggleState = (stateString) => {
@@ -33,13 +32,23 @@ export class Page extends PureComponent {
     updateGame(game.id, attacktype)
   }
 
+
   render() {
     const {game} = this.props
-    console.log(game)
     return (
+      <div>
+      {game === null &&
       <div className='game'>
-        <BattleArena background='forest' player1='fighter' player2='mage'/>
+        <BattleArena background='forest' player1='no' player2='no'/>
         <MenuBar/>
+      </div>
+      }
+      {game !== null &&
+      <div className='game'>
+        <BattleArena background='forest' player1={game.players[0].character} player2={game.players[0].character}/>
+        <MenuBar/>
+      </div>
+      }
       </div>
     )
   }
