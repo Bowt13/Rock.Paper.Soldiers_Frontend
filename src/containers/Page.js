@@ -25,8 +25,6 @@ export class Page extends PureComponent {
     }
   }
 
-  joinGame = () => this.props.joinGame(this.props.game.id)
-
   makeMove = (userid, attacktype) => {
     const {game, updateGame} = this.props
     updateGame(game.id, attacktype)
@@ -39,13 +37,19 @@ export class Page extends PureComponent {
       <div>
       {game === null &&
       <div className='game'>
-        <BattleArena background='forest' player1='no' player2='no'/>
+        <BattleArena background='forest' player1= 'undefined' player2= 'undefined'/>
         <MenuBar/>
       </div>
       }
-      {game !== null &&
+      {game !== null && game.players.length < 2 &&
       <div className='game'>
-        <BattleArena background='forest' player1={game.players[0].character} player2={game.players[0].character}/>
+        <BattleArena background='forest' player1= 'undefined' player2= 'undefined' health={game.players[0].hp}/>
+        <MenuBar/>
+      </div>
+      }
+      {game !== null && game.players.length === 2 &&
+      <div className='game'>
+        <BattleArena background='forest' player1={game.players[0]} player2={game.players[1]}/>
         <MenuBar/>
       </div>
       }
