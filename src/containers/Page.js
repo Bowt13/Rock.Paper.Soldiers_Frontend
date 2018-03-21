@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 import BattleArena from './Game/BattleArena'
 import MenuBar from './Game/MenuBar'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import {getGames, joinGame, updateGame} from '../actions/games'
+import {getGames, updateGame} from '../actions/games'
 import {getUsers} from '../actions/users'
-import {userId} from '../jwt'
 
 export class Page extends PureComponent {
   static propTypes = {
@@ -32,25 +31,41 @@ export class Page extends PureComponent {
 
 
   render() {
-    const {game} = this.props
+    const {game, users, authenticated} = this.props
+    const background = ['forrest', 'field']
+    if (!authenticated) return (
+      <Redirect to="/login" />
+    )
+
+    if (game === null || users === null) return 'Loading...'
+    if (!game) return 'Not found'
     return (
       <div>
       {game === null &&
       <div className='game'>
-        <BattleArena background='forest' player1= 'undefined' player2= 'undefined'/>
-        <MenuBar/>
+        <BattleArena background={background[1]}
+        player1= 'undefined'
+        player2= 'undefined'/>
+        <MenuBar game={this.props.game}/>
       </div>
       }
-      {game !== null && game.players.length < 2 &&
+      {game && game.players.length < 2 &&
       <div className='game'>
-        <BattleArena background='forest' player1= 'undefined' player2= 'undefined' health={game.players[0].hp}/>
-        <MenuBar/>
+        <BattleArena background={background[1]}
+        player1= 'undefined'
+        player2= 'undefined'
+        />
+        <MenuBar game={this.props.game}/>
       </div>
       }
-      {game !== null && game.players.length === 2 &&
+      {game && game.players.length === 2 &&
       <div className='game'>
-        <BattleArena background='forest' player1={game.players[0]} player2={game.players[1]}/>
-        <MenuBar/>
+        <BattleArena background={background[1]}
+        player1={game.players[0]}
+        player2={game.players[1]}
+        health={game.players[0].hp}
+        />
+        <MenuBar game={this.props.game}/>
       </div>
       }
       </div>
@@ -60,13 +75,12 @@ export class Page extends PureComponent {
 
 const mapStateToProps = (state, props) => ({
   authenticated: state.currentUser !== null,
-  userId: state.currentUser && userId(state.currentUser.jwt),
   game: state.games && state.games[props.match.params.id],
   users: state.users
 })
 
 const mapDispatchToProps = {
-  getGames, getUsers, joinGame, updateGame
+  getGames, getUsers, updateGame
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Page)

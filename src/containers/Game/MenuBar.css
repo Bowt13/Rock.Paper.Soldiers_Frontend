@@ -1,9 +1,10 @@
 .bar{
-  width: 99%;
-  height: 11.2rem;
+  width: 98.8%;
+  height: 11.33rem;
   background-color: black;
   margin-top: 19rem;
   align: center;
   border: 0.4rem solid red;
   border-top: 0.3rem solid darkred;
+  border-bottom: 0.3rem solid darkred;
 }

@@ -6,6 +6,7 @@ export const UPDATE_GAME = 'UPDATE_GAME'
 export const UPDATE_GAMES = 'UPDATE_GAMES'
 export const JOIN_GAME_SUCCESS = 'JOIN_GAME_SUCCESS'
 export const UPDATE_GAME_SUCCESS = 'UPDATE_GAME_SUCCESS'
+export const UPDATE_ATTACKTYPE_SUCCESS = 'UPDATE_ATTACKTYPE_SUCCESS'
 
 export const getGames = () => (dispatch, getState) => {
   const state = getState()
@@ -73,14 +74,14 @@ export const updateGame = (gameId, board) => (dispatch, getState) => {
 export const updateAttackType = (gameId, attackType) => (dispatch, getState) => {
   const state = getState()
   const jwt = state.currentUser.jwt
-
+  console.log({attackType: attackType})
   request
-    .patch(`${baseUrl}/games/${gameId}/players/`)
+    .patch(`${baseUrl}/games/${gameId}`)
     .set('Authorization', `Bearer ${jwt}`)
-    .send({gameId})
+    .send({attackType})
     .then(result => {
       dispatch({
-        type: UPDATE_GAME_SUCCESS
+        type: UPDATE_ATTACKTYPE_SUCCESS
       })
     })
     .catch(err => console.error(err))
