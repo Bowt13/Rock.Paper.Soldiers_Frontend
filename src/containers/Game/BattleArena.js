@@ -20,6 +20,8 @@ export class BattleArena extends PureComponent {
   }
   state = {
     playerStatus :'idle',
+    player1AttackType:'none',
+    player2AttackType:'none'
   }
 
 calulatePercentage = (totalDamage) => {
@@ -33,10 +35,25 @@ togglePlayerState = (stateString) => {
   })
 }
 
-toggleAttackType = (stateString) => {
+togglePlayer1AttackType = (attacktype) => {
   this.setState({
-    attackType: stateString
+    player1AttackType: attacktype
   })
+}
+
+togglePlayer2AttackType = (attacktype) => {
+  this.setState({
+    player2AttackType: attacktype
+  })
+}
+
+
+timerPlayer1AttackType = (x, y) => {
+  setTimeout(_ => this.togglePlayer1AttackType(x), y);
+}
+
+timerPlayer2AttackType = (x, y) => {
+  setTimeout(_ => this.togglePlayer2AttackType(x), y);
 }
 
 timerPlayerState = (x, y) => {
@@ -54,7 +71,8 @@ moveChecker = () => {
 }
 
   render() {
-
+    console.log(this.props.player1)
+    console.log(this.props.player2)
     return (
       <div>
       <div>
@@ -80,21 +98,23 @@ moveChecker = () => {
                 status={this.state.playerStatus}
                 attackType={this.props.player2.pendingMove}/>
 
-                {this.timerIdleCheck(1)}
+                {this.togglePlayer1AttackType(this.props.player1.pendingMove)}
+                {this.togglePlayer2AttackType(this.props.player2.pendingMove)}
+                {this.timerIdleCheck(180)}
             </div>
             }
             {this.state.playerStatus === 'move' &&
             <div>
 
               <Player side='left' character={this.props.player1.character}
-                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.props.player1.pendingMove}.gif`)}
+                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
                 status={this.state.playerStatus}
-                attackType={this.props.player1.pendingMove}/>
+                attackType={this.state.player1AttackType}/>
 
               <Player side='right' character={this.props.player2.character}
-                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.props.player2.pendingMove}.gif`)}
+                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.state.player2AttackType}.gif`)}
                 status={this.state.playerStatus}
-                attackType={this.props.player2.pendingMove}/>
+                attackType={this.state.player2AttackType}/>
                 {this.timerPlayerState('attack', 450)}
             </div>
             }
@@ -102,29 +122,32 @@ moveChecker = () => {
             <div>
 
               <Player side='left' character={this.props.player1.character}
-                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.props.player1.pendingMove}.gif`)}
+                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
                 status={this.state.playerStatus}
-                attackType={this.props.player1.pendingMove}/>
+                attackType={this.state.player1AttackType}/>
 
               <Player side='right' character={this.props.player2.character}
-                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.props.player2.pendingMove}.gif`)}
+                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.state.player2AttackType}.gif`)}
                 status={this.state.playerStatus}
-                attackType={this.props.player2.pendingMove}/>
+                attackType={this.state.player2AttackType}/>
                 {this.timerPlayerState('moveback', 400)}
             </div>
             }
             {this.state.playerStatus === 'moveback' &&
             <div>
               <Player side='left' character={this.props.player1.character}
-                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.props.player1.pendingMove}.gif`)}
+                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
                 status={this.state.playerStatus}
-                attackType={this.props.player1.pendingMove}/>
+                attackType={this.state.player1AttackType}/>
 
               <Player side='right' character={this.props.player2.character}
-                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.props.player2.pendingMove}.gif`)}
+                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.state.player2AttackType}.gif`)}
                 status={this.state.playerStatus}
-                attackType={this.props.player2.pendingMove}/>
+                attackType={this.state.player2AttackType}/>
                 {this.timerPlayerState('idle', 450)}
+
+                {this.timerPlayer1AttackType(this.props.player1.pendingMove, 460)}
+                {this.timerPlayer2AttackType(this.props.player2.pendingMove, 460)}
             </div>
             }
           </div>

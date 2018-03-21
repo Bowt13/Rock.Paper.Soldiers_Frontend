@@ -11,6 +11,7 @@ export class Page extends PureComponent {
   static propTypes = {
   }
 
+
   toggleState = (stateString) => {
     this.setState({
       page: stateString
@@ -33,12 +34,19 @@ export class Page extends PureComponent {
   render() {
     const {game, users, authenticated} = this.props
     const background = ['forrest', 'field']
+
     if (!authenticated) return (
       <Redirect to="/login" />
     )
 
     if (game === null || users === null) return 'Loading...'
     if (!game) return 'Not found'
+
+    const player1 = game.players.find(p => p.character === 'fighter')
+    const player2 = game.players.find(p => p.character === 'mage')
+
+    console.log(player1)
+    console.log(player2)
     return (
       <div>
       {game === null &&
@@ -64,8 +72,8 @@ export class Page extends PureComponent {
       {game && game.players.length === 2 &&
       <div className='game'>
         <BattleArena background={background[1]}
-        player1={game.players[0]}
-        player2={game.players[1]}
+        player1={player1}
+        player2={player2}
         health={game.players[0].hp}
         game={this.props.game}
         />
