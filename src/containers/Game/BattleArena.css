@@ -35,9 +35,23 @@
     height: 18.4rem;
     margin-left: 0.4rem;
     margin-top: -18.7rem;
+    background-position: bottom;
     background-image: url('../../img/backgrounds/fieldOverlay.gif');
-    background-size: 101.5% 100%;
-    background-repeat: no-repeat;
+    background-size: 20rem 6rem;
+    background-repeat: repeat-x;
     background-position: absolute;
-    z-index: 10;
+    z-index: 1;
+  }
+  .forrestOverlay{
+    position: absolute;
+    width: 98.8%;
+    height: 18.4rem;
+    margin-left: 0.4rem;
+    margin-top: -18.7rem;
+    background-position: bottom;
+    background-image: url('../../img/backgrounds/fieldOverlay.gif');
+    background-size: 20rem 6rem;
+    background-repeat: repeat-x;
+    background-position: absolute;
+    z-index: 1;
   }

@@ -75,7 +75,7 @@ moveChecker = () => {
     console.log(this.props.player2)
     return (
       <div>
-      <div>
+      <div className={`fieldOverlay`}>
       </div>
       <div>
       {this.props.player1 !== undefined && this.props.player2 !== undefined &&

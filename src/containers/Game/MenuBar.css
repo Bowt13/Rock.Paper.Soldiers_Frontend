@@ -7,4 +7,5 @@
   border: 0.4rem solid red;
   border-top: 0.3rem solid darkred;
   border-bottom: 0.3rem solid darkred;
+  z-index: 10;
 }
