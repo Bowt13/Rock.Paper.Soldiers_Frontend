@@ -27,6 +27,13 @@ export default class SignupForm extends PureComponent {
 				</div>
 
 				<div>
+					<label htmlFor="username">Username</label>
+					<input type="username" name="username" id="username" value={
+						this.state.username || ''
+					} onChange={ this.handleChange } />
+				</div>
+
+				<div>
 					<label htmlFor="password">Password</label>
 					<input type="password" name="password" id="password" value={
 						this.state.password || ''
