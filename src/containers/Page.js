@@ -45,7 +45,9 @@ export class Page extends PureComponent {
       <div className='game'>
         <BattleArena background={background[1]}
         player1= 'undefined'
-        player2= 'undefined'/>
+        player2= 'undefined'
+        game={this.props.game}
+        />
         <MenuBar game={this.props.game}/>
       </div>
       }
@@ -54,6 +56,7 @@ export class Page extends PureComponent {
         <BattleArena background={background[1]}
         player1= 'undefined'
         player2= 'undefined'
+        game={this.props.game}
         />
         <MenuBar game={this.props.game}/>
       </div>
@@ -64,6 +67,7 @@ export class Page extends PureComponent {
         player1={game.players[0]}
         player2={game.players[1]}
         health={game.players[0].hp}
+        game={this.props.game}
         />
         <MenuBar game={this.props.game}/>
       </div>

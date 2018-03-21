@@ -78,7 +78,7 @@ export const updateAttackType = (gameId, attackType) => (dispatch, getState) => 
   request
     .patch(`${baseUrl}/games/${gameId}`)
     .set('Authorization', `Bearer ${jwt}`)
-    .send({attackType})
+    .send({attackType: attackType})
     .then(result => {
       dispatch({
         type: UPDATE_ATTACKTYPE_SUCCESS

@@ -40,7 +40,6 @@ export class MenuBar extends PureComponent {
 
   selectAttackType = (selectedAttack) => {
     const {game, updateAttackType} = this.props
-    console.log(game)
     updateAttackType(game.id, selectedAttack)
   }
 
