@@ -4,6 +4,7 @@ import Player from '../../components/Game/Player'
 import HealthBar from '../../components/Game/HealthBar'
 import {updateAttackType} from '../../actions/games'
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 
 //STYLING
 import './BattleArena.css'
@@ -21,7 +22,7 @@ export class BattleArena extends PureComponent {
   state = {
     playerStatus :'idle',
     player1AttackType:'none',
-    player2AttackType:'none'
+    player2AttackType:'none',
   }
 
 calulatePercentage = (totalDamage) => {
@@ -47,7 +48,6 @@ togglePlayer2AttackType = (attacktype) => {
   })
 }
 
-
 timerPlayer1AttackType = (x, y) => {
   setTimeout(_ => this.togglePlayer1AttackType(x), y);
 }
@@ -71,15 +71,15 @@ moveChecker = () => {
 }
 
 winMoveChecker = () => {
-  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'melee') return `ties to`
-  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'ranged') return `wins from`
-  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'spell') return `loses to`
-  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'spell') return `ties to`
-  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'melee') return `wins from`
-  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'ranged') return `loses to`
-  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'ranged') return `ties to`
-  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'spell') return `wins from`
-  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'melee') return `loses to`
+  if (this.props.player1.previousMove === 'melee' && this.props.player2.previousMove === 'melee') return `ties to`
+  if (this.props.player1.previousMove === 'melee' && this.props.player2.previousMove === 'ranged') return `wins from`
+  if (this.props.player1.previousMove === 'melee' && this.props.player2.previousMove === 'spell') return `loses to`
+  if (this.props.player1.previousMove === 'spell' && this.props.player2.previousMove === 'spell') return `ties to`
+  if (this.props.player1.previousMove === 'spell' && this.props.player2.previousMove === 'melee') return `wins from`
+  if (this.props.player1.previousMove === 'spell' && this.props.player2.previousMove === 'ranged') return `loses to`
+  if (this.props.player1.previousMove === 'ranged' && this.props.player2.previousMove === 'ranged') return `ties to`
+  if (this.props.player1.previousMove === 'ranged' && this.props.player2.previousMove === 'spell') return `wins from`
+  if (this.props.player1.previousMove === 'ranged' && this.props.player2.previousMove === 'melee') return `loses to`
 }
 
   render() {
@@ -97,6 +97,22 @@ winMoveChecker = () => {
 
             {this.state.playerStatus === 'idle' &&
             <div>
+              {this.props.game.winner &&
+              <p className='attack-display'>
+                {this.props.game.winner}
+                <br/>
+                WINS
+              </p>
+            }
+
+            {!this.props.game.winner && this.props.player1.previousMove && this.props.player2.previousMove &&
+            <p className='attack-display'>
+              {this.props.player1.character}: {this.props.player1.previousMove}
+              <br/>
+                  {this.winMoveChecker()}
+              <br/>
+              {this.props.player2.character}: {this.props.player2.previousMove}
+            </p>}
 
               <Player side='left' character={this.props.player1.character}
                 imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}.gif`)}
@@ -116,15 +132,6 @@ winMoveChecker = () => {
             {this.state.playerStatus === 'move' &&
             <div>
 
-              {this.props.player1.pendingMove && this.props.player2.pendingMove &&
-              <p className='attack-display'>
-                {this.props.player1.character}:{this.props.player1.pendingMove}
-                <br/>
-                {this.winMoveChecker()}
-                <br/>
-                {this.props.player2.character}:{this.props.player2.pendingMove}
-              </p>}
-
               <Player side='left' character={this.props.player1.character}
                 imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
                 status={this.state.playerStatus}
@@ -139,15 +146,6 @@ winMoveChecker = () => {
             }
             {this.state.playerStatus === 'attack' &&
             <div>
-
-              {this.props.player1.pendingMove && this.props.player2.pendingMove &&
-              <p className='attack-display'>
-                {this.props.player1.character}:{this.props.player1.pendingMove}
-                <br/>
-                {this.winMoveChecker()}
-                <br/>
-                {this.props.player2.character}:{this.props.player2.pendingMove}
-              </p>}
 
               <Player side='left' character={this.props.player1.character}
                 imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
@@ -164,13 +162,12 @@ winMoveChecker = () => {
             {this.state.playerStatus === 'moveback' &&
             <div>
 
-              {this.props.player1.pendingMove && this.props.player2.pendingMove &&
               <p className='attack-display'>
-                {this.props.player1.character}:{this.props.player1.pendingMove}
+                {this.props.player1.character}: {this.props.player1.previousMove}
                 <br/>
                     {this.winMoveChecker()}
                 <br/>
-                {this.props.player2.character}:{this.props.player2.pendingMove}
+                {this.props.player2.character}: {this.props.player2.previousMove}
               </p>}
 
               <Player side='left' character={this.props.player1.character}

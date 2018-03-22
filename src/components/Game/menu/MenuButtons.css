@@ -89,3 +89,23 @@
   font-size: 4rem;
   color: white;
 }
+
+.beats-ranged{
+  margin-left: 3rem;
+  display: inline-block;
+  color: white;
+  width: 19rem;
+}
+
+.beats-spell{
+  display: inline-block;
+  margin-left: 1.5rem;
+  color: white;
+  width: 19rem;
+}
+.beats-melee{
+  display: inline-block;
+  margin-left: 1.5rem;
+  color: white;
+  width: 16rem;
+}
