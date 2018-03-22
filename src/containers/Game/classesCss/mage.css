@@ -24,7 +24,7 @@
 /* MOVE */
 {}
   .mage-right-move-melee{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
@@ -33,7 +33,7 @@
   }
 
   .mage-left-move-melee{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
@@ -47,7 +47,7 @@
   }
 
   .mage-right-moveback-melee{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
@@ -61,7 +61,7 @@
   }
 
   .mage-left-moveback-melee{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
@@ -70,16 +70,16 @@
   }
 
   .mage-right-move-spell{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
   }
 
   .mage-left-move-spell{
-    height: 10.5rem;
+    height: 7rem;
     position: absolute;
-    margin-top: 8rem;
+    margin-top: 7rem;
     margin-left: 9.3rem;
     -moz-transform: scale(-1, 1);
     -webkit-transform: scale(-1, 1);
@@ -89,14 +89,14 @@
   }
 
   .mage-right-moveback-spell{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
   }
 
   .mage-left-moveback-spell{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
@@ -108,7 +108,7 @@
   }
 
   .mage-right-move-ranged{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
@@ -117,7 +117,7 @@
   }
 
   .mage-left-move-ranged{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
@@ -131,7 +131,7 @@
   }
 
   .mage-right-moveback-ranged{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
@@ -145,7 +145,7 @@
   }
 
   .mage-left-moveback-ranged{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
@@ -155,14 +155,14 @@
 /* IDLE */
 {}
   .mage-right-idle{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
   }
 
   .mage-left-idle{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
@@ -176,21 +176,21 @@
 /* ATTACKS */
 {}
   .mage-right-attack-melee{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 32rem;
   }
 
   .mage-right-attack-spell{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 50rem;
   }
 
   .mage-left-attack-melee{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 28rem;
@@ -202,7 +202,7 @@
   }
 
   .mage-left-attack-spell{
-    height: 8rem;
+    height: 7rem;
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
