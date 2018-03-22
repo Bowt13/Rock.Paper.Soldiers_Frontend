@@ -85,6 +85,8 @@ winMoveChecker = () => {
   render() {
     return (
       <div>
+      <div className={`fieldOverlay`}>
+      </div>
       <div>
       {this.props.player1 !== undefined && this.props.player2 !== undefined &&
         <div className={this.props.background}>

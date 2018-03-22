@@ -51,7 +51,7 @@ export class Page extends PureComponent {
       <div>
       {game === null &&
       <div className='game'>
-        <BattleArena background={background[1]}
+        <BattleArena background={background[0]}
         player1= 'undefined'
         player2= 'undefined'
         game={this.props.game}
@@ -61,7 +61,7 @@ export class Page extends PureComponent {
       }
       {game && game.players.length < 2 &&
       <div className='game'>
-        <BattleArena background={background[1]}
+        <BattleArena background={background[0]}
         player1= 'undefined'
         player2= 'undefined'
         game={this.props.game}
@@ -81,7 +81,7 @@ export class Page extends PureComponent {
       }
       {game.winner && game.players.length === 2 &&
       <div className='game'>
-        <BattleArena background={background[1]}
+        <BattleArena background={background[0]}
         player1={player1}
         player2={player2}
         game={this.props.game}
