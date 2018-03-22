@@ -3,6 +3,7 @@ import {getGames, createGame, joinGame} from '../../actions/games'
 import {getUsers} from '../../actions/users'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
+import {userId} from '../../jwt'
 import Button from 'material-ui/Button'
 import Paper from 'material-ui/Paper'
 import Card, { CardActions, CardContent } from 'material-ui/Card'
@@ -23,12 +24,16 @@ class GamesList extends PureComponent {
   }
 
   renderGame = (game) => {
-    const handleClick = () => {
+    const handleJoinGame = () => {
       this.props.joinGame(game.id);
       history.push(`/games/${game.id}`);
     }
 
-    const {users, history} = this.props
+    const handleGoToGame = () => {
+      history.push(`/games/${game.id}`)
+    }
+
+    const {users, history, userId} = this.props
     return (<Card key={game.id} className="game-card">
       <CardContent>
         <Typography color="textSecondary">
@@ -47,24 +52,47 @@ class GamesList extends PureComponent {
         </Typography>
       </CardContent>
       <CardActions>
+      {
+        game.players.find(p => p.userId === userId) &&
+        game.status === 'pending' &&
         <Button
           size="small"
-          onClick={() => handleClick()}
+          onClick={() => handleGoToGame()}
         >
-          Fighter
+          Join as Fighter
         </Button>
+      }
+      {
+        game.players.find(p => p.userId !== userId) &&
+        game.status === 'pending' &&
         <Button
           size="small"
-          onClick={() => handleClick()}
+          onClick={() => handleJoinGame()}
         >
-          Mage
+          Join as Mage
         </Button>
+      }
+      {
+        game.players.find(p => p.userId === userId) &&
+        game.status === 'started' &&
         <Button
           size="small"
-          onClick={() => handleClick()}
+          onClick={() => handleGoToGame()}
         >
-          Archer
+          Return To Game
         </Button>
+      }
+      {
+        game.players.find(p => p.userId === userId) &&
+        game.status === 'finished' &&
+        <Button
+          size="small"
+          disabled='true'
+          onClick={() => handleGoToGame()}
+        >
+          Winner is {game.winner}
+        </Button>
+      }
       </CardActions>
     </Card>)
   }
@@ -97,9 +125,11 @@ class GamesList extends PureComponent {
 
 const mapStateToProps = state => ({
   authenticated: state.currentUser !== null,
+  userId: state.currentUser && userId(state.currentUser.jwt),
   users: state.users === null ? null : state.users,
   games: state.games === null ?
     null : Object.values(state.games).sort((a, b) => b.id - a.id)
+
 })
 
 
