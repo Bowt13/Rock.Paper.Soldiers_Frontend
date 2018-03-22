@@ -189,6 +189,13 @@
     margin-left: 50rem;
   }
 
+  .fighter-right-attack-ranged{
+    height: 8rem;
+    position: absolute;
+    margin-top: 10.7rem;
+    margin-left: 32rem;
+  }
+
   .fighter-left-attack-melee{
     height: 8rem;
     position: absolute;
@@ -206,6 +213,18 @@
     position: absolute;
     margin-top: 11rem;
     margin-left: 10rem;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: FlipH;
+  }
+
+  .fighter-left-attack-ranged{
+    height: 9.7rem;
+    position: absolute;
+    margin-top: 8.2rem;
+    margin-left: 28rem;
     -moz-transform: scale(-1, 1);
     -webkit-transform: scale(-1, 1);
     -o-transform: scale(-1, 1);

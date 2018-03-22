@@ -7,7 +7,6 @@
 }
 
 .button-container{
-  overflow: scroll;
   margin-top: -1.5rem;
   margin-left: 1.9rem;
 }
@@ -62,5 +61,31 @@
   width: 52rem;
   background-color: pink;
   font-size: 2rem;
+  color: white;
+}
+
+.melee:disabled{
+  height: 6rem;
+  width: 19rem;
+  background-color: grey;
+  font-size: 4rem;
+  color: white;
+}
+
+.spell:disabled{
+  margin-left: 1.5rem;
+  height: 6rem;
+  width: 19rem;
+  background-color: grey;
+  font-size: 4rem;
+  color: white;
+}
+
+.ranged:disabled{
+  margin-left: 1.5rem;
+  height: 6rem;
+  width: 19rem;
+  background-color: grey;
+  font-size: 4rem;
   color: white;
 }

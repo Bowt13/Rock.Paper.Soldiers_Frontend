@@ -70,9 +70,19 @@ moveChecker = () => {
   }
 }
 
+winMoveChecker = () => {
+  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'melee') return `ties to`
+  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'ranged') return `wins from`
+  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'spell') return `loses to`
+  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'spell') return `ties to`
+  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'melee') return `wins from`
+  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'ranged') return `loses to`
+  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'ranged') return `ties to`
+  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'spell') return `wins from`
+  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'melee') return `loses to`
+}
+
   render() {
-    console.log(this.props.player1)
-    console.log(this.props.player2)
     return (
       <div>
       <div className={`fieldOverlay`}>
@@ -106,6 +116,15 @@ moveChecker = () => {
             {this.state.playerStatus === 'move' &&
             <div>
 
+              {this.props.player1.pendingMove && this.props.player2.pendingMove &&
+              <p className='attack-display'>
+                {this.props.player1.character}:{this.props.player1.pendingMove}
+                <br/>
+                {this.winMoveChecker()}
+                <br/>
+                {this.props.player2.character}:{this.props.player2.pendingMove}
+              </p>}
+
               <Player side='left' character={this.props.player1.character}
                 imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
                 status={this.state.playerStatus}
@@ -121,6 +140,15 @@ moveChecker = () => {
             {this.state.playerStatus === 'attack' &&
             <div>
 
+              {this.props.player1.pendingMove && this.props.player2.pendingMove &&
+              <p className='attack-display'>
+                {this.props.player1.character}:{this.props.player1.pendingMove}
+                <br/>
+                {this.winMoveChecker()}
+                <br/>
+                {this.props.player2.character}:{this.props.player2.pendingMove}
+              </p>}
+
               <Player side='left' character={this.props.player1.character}
                 imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
                 status={this.state.playerStatus}
@@ -135,6 +163,16 @@ moveChecker = () => {
             }
             {this.state.playerStatus === 'moveback' &&
             <div>
+
+              {this.props.player1.pendingMove && this.props.player2.pendingMove &&
+              <p className='attack-display'>
+                {this.props.player1.character}:{this.props.player1.pendingMove}
+                <br/>
+                    {this.winMoveChecker()}
+                <br/>
+                {this.props.player2.character}:{this.props.player2.pendingMove}
+              </p>}
+
               <Player side='left' character={this.props.player1.character}
                 imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.state.player1AttackType}.gif`)}
                 status={this.state.playerStatus}

@@ -42,6 +42,11 @@ export class MenuBar extends PureComponent {
     const {game, updateAttackType} = this.props
     updateAttackType(game.id, selectedAttack)
   }
+  hasPendingMove = () => {
+    const {players} = this.props.game
+    if(!players[1]) return
+    return players.find(player => player.userId === this.props.userId).pendingMove || this.props.game.winner
+  }
 
   render() {
     return (
@@ -52,7 +57,7 @@ export class MenuBar extends PureComponent {
         }
         {
           this.state.menu === 'offense' &&
-          <OffenseButtons updateAttackType={this.selectAttackType}/>
+          <OffenseButtons updateAttackType={this.selectAttackType} disable={this.hasPendingMove()}/>
         }
         {
           this.state.menu === 'defense' &&

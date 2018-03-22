@@ -69,12 +69,21 @@ export class Page extends PureComponent {
         <MenuBar game={this.props.game}/>
       </div>
       }
-      {game && game.players.length === 2 &&
+      {!game.winner && game.players.length === 2 &&
+      <div className='game'>
+        <BattleArena background={background[1]}
+        player1={player1}
+        player2={player2}
+        game={this.props.game}
+        />
+        <MenuBar game={this.props.game}/>
+      </div>
+      }
+      {game.winner && game.players.length === 2 &&
       <div className='game'>
         <BattleArena background={background[0]}
         player1={player1}
         player2={player2}
-        health={game.players[0].hp}
         game={this.props.game}
         />
         <MenuBar game={this.props.game}/>
