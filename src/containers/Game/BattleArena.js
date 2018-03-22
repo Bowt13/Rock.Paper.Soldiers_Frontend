@@ -12,8 +12,8 @@ import './classesCss/fighter.css'
 export default class BattleArena extends PureComponent {
   static propTypes = {
     background: PropTypes.string.isRequired,
-    player1: PropTypes.string.isRequired,
-    player2: PropTypes.string.isRequired,
+    player1: PropTypes.object.isRequired,
+    player2: PropTypes.object.isRequired,
   }
   state = {
     playerStatus :'idle',
@@ -46,58 +46,83 @@ timerAttackType = (x, y) => {
 }
 
   render() {
+
     return (
       <div>
-      {this.props.player1 !== 'no' && this.props.player !== 'no' &&
+      <div>
+      </div>
+      <div>
+      {this.props.player1 !== undefined && this.props.player2 !== undefined &&
         <div className={this.props.background}>
-          <HealthBar side='left' percentage={this.calulatePercentage(0)}/>
-          <HealthBar side='right' percentage={this.calulatePercentage(0)}/>
-          {this.state.playerStatus === 'idle' &&
+        {this.props.player1 !== 'undefined' && this.props.player2 !== 'undefined' &&
           <div>
-            <Player side='left' character={this.props.player1} imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            <Player side='right'character={this.props.player2} imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            {this.timerPlayerState('move', 450)}
+            <HealthBar side='left' percentage={this.props.player1.hp*10}/>
+            <HealthBar side='right' percentage={this.props.player2.hp*10}/>
+            
+            {this.state.playerStatus === 'idle' &&
+            <div>
+
+              <Player side='left' character={this.props.player1.character}
+                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.props.player1.pendingMove}/>
+
+              <Player side='right'character={this.props.player2.character}
+                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.props.player2.pendingMove}/>
+
+            </div>
+            }
+            {this.state.playerStatus === 'move' &&
+            <div>
+
+              <Player side='left' character={this.props.player1.character}
+                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.props.player1.pendingMove}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.state.attackType}/>
+
+              <Player side='right' character={this.props.player2.character}
+                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.props.player2.pendingMove}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.state.attackType}/>
+
+            </div>
+            }
+            {this.state.playerStatus === 'attack' &&
+            <div>
+
+              <Player side='left' character={this.props.player1.character}
+                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.props.player1.pendingMove}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.state.attackType}/>
+
+              <Player side='right' character={this.props.player2.character}
+                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.props.player2.pendingMove}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.state.attackType}/>
+
+            </div>
+            }
+            {this.state.playerStatus === 'moveback' &&
+            <div>
+              <Player side='left' character={this.props.player1.character}
+                imgSrc={require (`../../img/classes/${this.props.player1.character}-${this.state.playerStatus}-${this.props.player1.pendingMove}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.state.attackType}/>
+
+              <Player side='right' character={this.props.player2.character}
+                imgSrc={require (`../../img/classes/${this.props.player2.character}-${this.state.playerStatus}-${this.props.player2.pendingMove}.gif`)}
+                status={this.state.playerStatus}
+                attackType={this.state.attackType}/>
+
+            </div>
+            }
           </div>
-          }
-          {this.state.playerStatus === 'move' && this.state.attackType === 'melee' &&
-          <div>
-            <Player side='left' character={this.props.player1} imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            <Player side='right' character={this.props.player2} imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            {this.timerPlayerState('attack', 350)}
-          </div>
-          }
-          {this.state.playerStatus === 'move' && this.state.attackType === 'spell' &&
-          <div>
-            <Player side='left' character={this.props.player1} imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            <Player side='right' character={this.props.player2} imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            {this.timerPlayerState('attack', 600)}
-          </div>
-          }
-          {this.state.playerStatus === 'attack' &&
-          <div>
-            <Player side='left' character={this.props.player1} imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            <Player side='right' character={this.props.player2} imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            {this.timerPlayerState('moveback', 400)}
-          </div>
-          }
-          {this.state.playerStatus === 'moveback' && this.state.attackType === 'melee' &&
-          <div>
-            <Player side='left' character={this.props.player1} imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            <Player side='right' character={this.props.player2} imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            {this.timerPlayerState('idle', 500)}
-            {this.timerAttackType('spell', 500)}
-          </div>
-          }
-          {this.state.playerStatus === 'moveback' && this.state.attackType === 'spell' &&
-          <div>
-            <Player side='left' character={this.props.player1} imgSrc={require (`../../img/classes/${this.props.player1}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            <Player side='right' character={this.props.player2} imgSrc={require (`../../img/classes/${this.props.player2}-${this.state.playerStatus}-${this.state.attackType}.gif`)} status={this.state.playerStatus} attackType={this.state.attackType}/>
-            {this.timerPlayerState('idle', 500)}
-            {this.timerAttackType('melee', 500)}
-          </div>
-          }
+        }
         </div>
       }
+      </div>
       </div>
     )
   }

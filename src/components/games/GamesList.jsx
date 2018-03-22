@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import {getGames, createGame} from '../../actions/games'
+import {getGames, createGame, joinGame} from '../../actions/games'
 import {getUsers} from '../../actions/users'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
@@ -23,6 +23,11 @@ class GamesList extends PureComponent {
   }
 
   renderGame = (game) => {
+    const handleClick = () => {
+      this.props.joinGame(game.id);
+      history.push(`/games/${game.id}`);
+    }
+
     const {users, history} = this.props
     return (<Card key={game.id} className="game-card">
       <CardContent>
@@ -44,9 +49,21 @@ class GamesList extends PureComponent {
       <CardActions>
         <Button
           size="small"
-          onClick={() => history.push(`/games/${game.id}`)}
+          onClick={() => handleClick()}
         >
-          Watch
+          Fighter
+        </Button>
+        <Button
+          size="small"
+          onClick={() => handleClick()}
+        >
+          Mage
+        </Button>
+        <Button
+          size="small"
+          onClick={() => handleClick()}
+        >
+          Archer
         </Button>
       </CardActions>
     </Card>)
@@ -85,6 +102,8 @@ const mapStateToProps = state => ({
     null : Object.values(state.games).sort((a, b) => b.id - a.id)
 })
 
+
+
 export default withRouter(
-  connect(mapStateToProps, {getGames, getUsers, createGame})(GamesList)
+  connect(mapStateToProps, {getGames, getUsers, createGame, joinGame})(GamesList)
 )

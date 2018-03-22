@@ -1,4 +1,9 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import {getGames, joinGame, updateAttackType} from '../../actions/games'
+import {getUsers} from '../../actions/users'
+import {userId} from '../../jwt'
 
 //COMPONENTS
 import RootButtons from '../../components/Game/menu/RootButtons'
@@ -9,11 +14,22 @@ import OffensePhysicalButtons from '../../components/Game/menu/OffensePhysicalBu
 //STYLING
 import './MenuBar.css'
 
-export default class MenuBar extends PureComponent {
+export class MenuBar extends PureComponent {
+  static PropTypes = {
+    game: PropTypes.string.isRequired,
+  }
   static propTypes = {
   }
   state = {
     menu: 'offense'
+  }
+
+  componentWillMount() {
+    if (this.props.authenticated) {
+      if (this.props.game === null) this.props.getGames()
+      if (this.props.users === null) this.props.getUsers()
+      this.selectAttackType = this.selectAttackType.bind(this)
+    }
   }
 
   toggleState = (stateString) => {
@@ -22,8 +38,10 @@ export default class MenuBar extends PureComponent {
     })
   }
 
-  componentWillMount() {
-    this.toggleState = this.toggleState.bind(this)
+  selectAttackType = (selectedAttack) => {
+    const {game, updateAttackType} = this.props
+    console.log(game)
+    updateAttackType(game.id, selectedAttack)
   }
 
   render() {
@@ -35,7 +53,7 @@ export default class MenuBar extends PureComponent {
         }
         {
           this.state.menu === 'offense' &&
-          <OffenseButtons setMenu={this.toggleState}/>
+          <OffenseButtons updateAttackType={this.selectAttackType}/>
         }
         {
           this.state.menu === 'defense' &&
@@ -49,3 +67,15 @@ export default class MenuBar extends PureComponent {
     )
   }
 }
+
+const mapStateToProps = (state, props) => ({
+  authenticated: state.currentUser !== null,
+  userId: state.currentUser && userId(state.currentUser.jwt),
+  users: state.users
+})
+
+const mapDispatchToProps = {
+  getGames, getUsers, joinGame, updateAttackType
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MenuBar)
