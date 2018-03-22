@@ -71,15 +71,15 @@ moveChecker = () => {
 }
 
 winMoveChecker = () => {
-  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'melee') return `${this.props.player1.character} = ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'ranged') return `${this.props.player1.character} > ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'spell') return `${this.props.player1.character} < ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'spell') return `${this.props.player1.character} = ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'melee') return `${this.props.player1.character} > ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'ranged') return `${this.props.player1.character} < ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'ranged') return `${this.props.player1.character} = ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'spell') return `${this.props.player1.character} > ${this.props.player2.character}`
-  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'melee') return `${this.props.player1.character} < ${this.props.player2.character}`
+  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'melee') return `ties to`
+  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'ranged') return `wins from`
+  if (this.props.player1.pendingMove === 'melee' && this.props.player2.pendingMove === 'spell') return `loses to`
+  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'spell') return `ties to`
+  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'melee') return `wins from`
+  if (this.props.player1.pendingMove === 'spell' && this.props.player2.pendingMove === 'ranged') return `loses to`
+  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'ranged') return `ties to`
+  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'spell') return `wins from`
+  if (this.props.player1.pendingMove === 'ranged' && this.props.player2.pendingMove === 'melee') return `loses to`
 }
 
   render() {
@@ -120,9 +120,9 @@ winMoveChecker = () => {
               <p className='attack-display'>
                 {this.props.player1.character}:{this.props.player1.pendingMove}
                 <br/>
-                {this.props.player2.character}:{this.props.player2.pendingMove}
-                <br/>
                 {this.winMoveChecker()}
+                <br/>
+                {this.props.player2.character}:{this.props.player2.pendingMove}
               </p>}
 
               <Player side='left' character={this.props.player1.character}
@@ -144,9 +144,9 @@ winMoveChecker = () => {
               <p className='attack-display'>
                 {this.props.player1.character}:{this.props.player1.pendingMove}
                 <br/>
-                {this.props.player2.character}:{this.props.player2.pendingMove}
-                <br/>
                 {this.winMoveChecker()}
+                <br/>
+                {this.props.player2.character}:{this.props.player2.pendingMove}
               </p>}
 
               <Player side='left' character={this.props.player1.character}
@@ -168,9 +168,9 @@ winMoveChecker = () => {
               <p className='attack-display'>
                 {this.props.player1.character}:{this.props.player1.pendingMove}
                 <br/>
-                {this.props.player2.character}:{this.props.player2.pendingMove}
+                    {this.winMoveChecker()}
                 <br/>
-                {this.winMoveChecker()}
+                {this.props.player2.character}:{this.props.player2.pendingMove}
               </p>}
 
               <Player side='left' character={this.props.player1.character}
