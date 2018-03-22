@@ -41,3 +41,12 @@
     background-position: absolute;
     z-index: 10;
   }
+/*MOVEDISPLAY*/
+.attack-display{
+  position: fixed;
+  background-color: black;
+  color: white;
+  margin-left: 45%;
+  z-index: 10;
+  padding: 0.7rem;
+}
