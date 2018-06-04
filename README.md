@@ -6,17 +6,14 @@ The goal of this assignment to create an app where you can play a game online wi
 
 ##### Things I liked:
 
-I really liked thinking about the design of the page and what needs to go where
-to have a certain flow. Also I liked thinking about the data-model. To be honnest
-I just like solving giant puzzles.
+I really liked working with all the images. And figuring out how to do that. Now I know better but back then I was super surprised I could get it to work in the 1st place.
 
 ##### Things I didn't like:
 
-The final evaluation of the assignment itself stressed me out quite a bit. But I
-made it.
+It's not that I didn't like it it was just hard to work with the code that we where given.
 
 ##### Things I've learned:
 
-- Being self-sufficient.
-- Plan well.
-- MaterialUI.
+- Working in pairs
+- socketIo
+- keyframes
