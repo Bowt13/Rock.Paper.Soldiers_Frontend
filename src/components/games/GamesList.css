@@ -1,17 +1,17 @@
 h2 {
-  margin-bottom: 16px;
-  font-size: 14px;
+	margin-bottom: 16px;
+	font-size: 14px;
 }
 
 .game-card {
-  margin: 10px 10px 10px 0px;
+	margin: 10px 10px 10px 0px;
 }
 
 .create-game {
-  margin-top: 10px !important;
+	margin-top: 10px !important;
 }
 
 .outer-paper {
-  margin: auto;
-  width: 80%;
+	margin: auto;
+	width: 80%;
 }

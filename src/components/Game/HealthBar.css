@@ -1,548 +1,554 @@
-.wrapper-left{
-  width: 10rem;
-  height: 1rem;
-  background-color: transparent;
-  border: 2px solid black;
-  position: absolute;
-  margin-top: 3rem;
-  margin-left: 3%;
+.wrapper-left {
+	width: 10rem;
+	height: 1rem;
+	background-color: transparent;
+	border: 2px solid black;
+	position: absolute;
+	margin-top: 3rem;
+	margin-left: 3%;
 }
 
-.wrapper-right{
-  width: 10rem;
-  height: 1rem;
-  background-color: transparent;
-  border: 2px solid black;
-  position: absolute;
-  margin-top: 3rem;
-  margin-left: 81%;
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-  filter: FlipH;
+.wrapper-right {
+	width: 10rem;
+	height: 1rem;
+	background-color: transparent;
+	border: 2px solid black;
+	position: absolute;
+	margin-top: 3rem;
+	margin-left: 81%;
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+	filter: FlipH;
 }
 
-.text-left{
-  color: white;
-  font-size: 13px;
-  background-color: transparent;
-  position: absolute;
-  margin-top: 3.05rem;
-  margin-left: 2.3rem;
+.text-left {
+	color: white;
+	font-size: 13px;
+	background-color: transparent;
+	position: absolute;
+	margin-top: -1rem;
+	margin-left: 1rem;
 }
 
-.text-right{
-  color: white;
-  font-size: 13px;
-  background-color: transparent;
-  position: absolute;
-  margin-top: 3.05rem;
-  margin-left: 59.2rem;
+.text-right {
+	color: white;
+	font-size: 13px;
+	background-color: transparent;
+	position: absolute;
+	margin-top: -1rem;
+	margin-left: 1rem;
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+	filter: FlipH;
 }
-{}
-  .p100{
-    width: 100%;
-    height: 99%;
-    background-color: red;
-  }
-  .p99{
-    width: 99%;
-    height: 99%;
-    background-color: red;
-  }
-  .p98{
-    width: 98%;
-    height: 99%;
-    background-color: red;
-  }
-  .p97{
-    width: 97%;
-    height: 99%;
-    background-color: red;
-  }
-  .p96{
-    width: 96%;
-    height: 99%;
-    background-color: red;
-  }
-  .p95{
-    width: 95%;
-    height: 99%;
-    background-color: red;
-  }
-  .p94{
-    width: 100%;
-    height: 99%;
-    background-color: red;
-  }
-  .p93{
-    width: 99%;
-    height: 99%;
-    background-color: red;
-  }
-  .p92{
-    width: 98%;
-    height: 99%;
-    background-color: red;
-  }
-  .p91{
-    width: 97%;
-    height: 99%;
-    background-color: red;
-  }
-  .p90{
-    width: 96%;
-    height: 99%;
-    background-color: red;
-  }
-  .p89{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p88{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p87{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p86{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p85{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p84{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p83{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p82{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p81{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p80{
-    width: 80%;
-    height: 99%;
-    background-color: red;
-  }
-  .p79{
-    width: 79%;
-    height: 99%;
-    background-color: red;
-  }
-  .p78{
-    width: 78%;
-    height: 99%;
-    background-color: red;
-  }
-  .p77{
-    width: 77%;
-    height: 99%;
-    background-color: red;
-  }
-  .p76{
-    width: 76%;
-    height: 99%;
-    background-color: red;
-  }
-  .p75{
-    width: 75%;
-    height: 99%;
-    background-color: red;
-  }
-  .p74{
-    width: 74%;
-    height: 99%;
-    background-color: red;
-  }
-  .p73{
-    width: 73%;
-    height: 99%;
-    background-color: red;
-  }
-  .p72{
-    width: 72%;
-    height: 99%;
-    background-color: red;
-  }
-  .p71{
-    width: 71%;
-    height: 99%;
-    background-color: red;
-  }
-  .p70{
-    width: 70%;
-    height: 99%;
-    background-color: red;
-  }
-  .p69{
-    width: 69%;
-    height: 99%;
-    background-color: red;
-  }
-  .p68{
-    width: 68%;
-    height: 99%;
-    background-color: red;
-  }
-  .p67{
-    width: 67%;
-    height: 99%;
-    background-color: red;
-  }
-  .p66{
-    width: 66%;
-    height: 99%;
-    background-color: red;
-  }
-  .p65{
-    width: 65%;
-    height: 99%;
-    background-color: red;
-  }
-  .p64{
-    width: 64%;
-    height: 99%;
-    background-color: red;
-  }
-  .p63{
-    width: 63%;
-    height: 99%;
-    background-color: red;
-  }
-  .p62{
-    width: 62%;
-    height: 99%;
-    background-color: red;
-  }
-  .p61{
-    width: 61%;
-    height: 99%;
-    background-color: red;
-  }
-  .p60{
-    width: 60%;
-    height: 99%;
-    background-color: red;
-  }
-  .p59{
-    width: 59%;
-    height: 99%;
-    background-color: red;
-  }
-  .p58{
-    width: 58%;
-    height: 99%;
-    background-color: red;
-  }
-  .p57{
-    width: 57%;
-    height: 99%;
-    background-color: red;
-  }
-  .p56{
-    width: 56%;
-    height: 99%;
-    background-color: red;
-  }
-  .p55{
-    width: 55%;
-    height: 99%;
-    background-color: red;
-  }
-  .p54{
-    width: 54%;
-    height: 99%;
-    background-color: red;
-  }
-  .p53{
-    width: 53%;
-    height: 99%;
-    background-color: red;
-  }
-  .p52{
-    width: 52%;
-    height: 99%;
-    background-color: red;
-  }
-  .p51{
-    width: 51%;
-    height: 99%;
-    background-color: red;
-  }
-  .p50{
-    width: 50%;
-    height: 99%;
-    background-color: red;
-  }
-  .p49{
-    width: 49%;
-    height: 99%;
-    background-color: red;
-  }
-  .p48{
-    width: 48%;
-    height: 99%;
-    background-color: red;
-  }
-  .p47{
-    width: 47%;
-    height: 99%;
-    background-color: red;
-  }
-  .p46{
-    width: 46%;
-    height: 99%;
-    background-color: red;
-  }
-  .p45{
-    width: 45%;
-    height: 99%;
-    background-color: red;
-  }
-  .p44{
-    width: 44%;
-    height: 99%;
-    background-color: red;
-  }
-  .p43{
-    width: 43%;
-    height: 99%;
-    background-color: red;
-  }
-  .p42{
-    width: 42%;
-    height: 99%;
-    background-color: red;
-  }
-  .p41{
-    width: 41%;
-    height: 99%;
-    background-color: red;
-  }
-  .p40{
-    width: 40%;
-    height: 99%;
-    background-color: red;
-  }
-  .p39{
-    width: 39%;
-    height: 99%;
-    background-color: red;
-  }
-  .p38{
-    width: 38%;
-    height: 99%;
-    background-color: red;
-  }
-  .p37{
-    width: 37%;
-    height: 99%;
-    background-color: red;
-  }
-  .p36{
-    width: 36%;
-    height: 99%;
-    background-color: red;
-  }
-  .p35{
-    width: 35%;
-    height: 99%;
-    background-color: red;
-  }
-  .p34{
-    width: 34%;
-    height: 99%;
-    background-color: red;
-  }
-  .p33{
-    width: 33%;
-    height: 99%;
-    background-color: red;
-  }
-  .p32{
-    width: 32%;
-    height: 99%;
-    background-color: red;
-  }
-  .p31{
-    width: 31%;
-    height: 99%;
-    background-color: red;
-  }
-  .p30{
-    width: 30%;
-    height: 99%;
-    background-color: red;
-  }
-  .p29{
-    width: 29%;
-    height: 99%;
-    background-color: red;
-  }
-  .p28{
-    width: 28%;
-    height: 99%;
-    background-color: red;
-  }
-  .p27{
-    width: 27%;
-    height: 99%;
-    background-color: red;
-  }
-  .p26{
-    width: 26%;
-    height: 99%;
-    background-color: red;
-  }
-  .p25{
-    width: 25%;
-    height: 99%;
-    background-color: red;
-  }
-  .p24{
-    width: 24%;
-    height: 99%;
-    background-color: red;
-  }
-  .p23{
-    width: 23%;
-    height: 99%;
-    background-color: red;
-  }
-  .p22{
-    width: 22%;
-    height: 99%;
-    background-color: red;
-  }
-  .p21{
-    width: 21%;
-    height: 99%;
-    background-color: red;
-  }
-  .p20{
-    width: 20%;
-    height: 99%;
-    background-color: red;
-  }
-  .p19{
-    width: 19%;
-    height: 99%;
-    background-color: red;
-  }
-  .p18{
-    width: 18%;
-    height: 99%;
-    background-color: red;
-  }
-  .p17{
-    width: 17%;
-    height: 99%;
-    background-color: red;
-  }
-  .p16{
-    width: 16%;
-    height: 99%;
-    background-color: red;
-  }
-  .p15{
-    width: 15%;
-    height: 99%;
-    background-color: red;
-  }
-  .p14{
-    width: 14%;
-    height: 99%;
-    background-color: red;
-  }
-  .p13{
-    width: 13%;
-    height: 99%;
-    background-color: red;
-  }
-  .p12{
-    width: 12%;
-    height: 99%;
-    background-color: red;
-  }
-  .p11{
-    width: 11%;
-    height: 99%;
-    background-color: red;
-  }
-  .p10{
-    width: 10%;
-    height: 99%;
-    background-color: red;
-  }
-  .p9{
-    width: 9%;
-    height: 99%;
-    background-color: red;
-  }
-  .p8{
-    width: 8%;
-    height: 99%;
-    background-color: red;
-  }
-  .p7{
-    width: 7%;
-    height: 99%;
-    background-color: red;
-  }
-  .p6{
-    width: 6%;
-    height: 99%;
-    background-color: red;
-  }
-  .p5{
-    width: 5%;
-    height: 99%;
-    background-color: red;
-  }
-  .p4{
-    width: 4%;
-    height: 99%;
-    background-color: red;
-  }
-  .p3{
-    width: 3%;
-    height: 99%;
-    background-color: red;
-  }
-  .p2{
-    width: 2%;
-    height: 99%;
-    background-color: red;
-  }
-  .p1{
-    width: 1%;
-    height: 99%;
-    background-color: red;
-  }
-  .p0{
-    width: 0%;
-    height: 99%;
-    background-color: red;
-  }
+ {
+}
+.p100 {
+	width: 100%;
+	height: 99%;
+	background-color: red;
+}
+.p99 {
+	width: 99%;
+	height: 99%;
+	background-color: red;
+}
+.p98 {
+	width: 98%;
+	height: 99%;
+	background-color: red;
+}
+.p97 {
+	width: 97%;
+	height: 99%;
+	background-color: red;
+}
+.p96 {
+	width: 96%;
+	height: 99%;
+	background-color: red;
+}
+.p95 {
+	width: 95%;
+	height: 99%;
+	background-color: red;
+}
+.p94 {
+	width: 100%;
+	height: 99%;
+	background-color: red;
+}
+.p93 {
+	width: 99%;
+	height: 99%;
+	background-color: red;
+}
+.p92 {
+	width: 98%;
+	height: 99%;
+	background-color: red;
+}
+.p91 {
+	width: 97%;
+	height: 99%;
+	background-color: red;
+}
+.p90 {
+	width: 96%;
+	height: 99%;
+	background-color: red;
+}
+.p89 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p88 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p87 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p86 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p85 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p84 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p83 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p82 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p81 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p80 {
+	width: 80%;
+	height: 99%;
+	background-color: red;
+}
+.p79 {
+	width: 79%;
+	height: 99%;
+	background-color: red;
+}
+.p78 {
+	width: 78%;
+	height: 99%;
+	background-color: red;
+}
+.p77 {
+	width: 77%;
+	height: 99%;
+	background-color: red;
+}
+.p76 {
+	width: 76%;
+	height: 99%;
+	background-color: red;
+}
+.p75 {
+	width: 75%;
+	height: 99%;
+	background-color: red;
+}
+.p74 {
+	width: 74%;
+	height: 99%;
+	background-color: red;
+}
+.p73 {
+	width: 73%;
+	height: 99%;
+	background-color: red;
+}
+.p72 {
+	width: 72%;
+	height: 99%;
+	background-color: red;
+}
+.p71 {
+	width: 71%;
+	height: 99%;
+	background-color: red;
+}
+.p70 {
+	width: 70%;
+	height: 99%;
+	background-color: red;
+}
+.p69 {
+	width: 69%;
+	height: 99%;
+	background-color: red;
+}
+.p68 {
+	width: 68%;
+	height: 99%;
+	background-color: red;
+}
+.p67 {
+	width: 67%;
+	height: 99%;
+	background-color: red;
+}
+.p66 {
+	width: 66%;
+	height: 99%;
+	background-color: red;
+}
+.p65 {
+	width: 65%;
+	height: 99%;
+	background-color: red;
+}
+.p64 {
+	width: 64%;
+	height: 99%;
+	background-color: red;
+}
+.p63 {
+	width: 63%;
+	height: 99%;
+	background-color: red;
+}
+.p62 {
+	width: 62%;
+	height: 99%;
+	background-color: red;
+}
+.p61 {
+	width: 61%;
+	height: 99%;
+	background-color: red;
+}
+.p60 {
+	width: 60%;
+	height: 99%;
+	background-color: red;
+}
+.p59 {
+	width: 59%;
+	height: 99%;
+	background-color: red;
+}
+.p58 {
+	width: 58%;
+	height: 99%;
+	background-color: red;
+}
+.p57 {
+	width: 57%;
+	height: 99%;
+	background-color: red;
+}
+.p56 {
+	width: 56%;
+	height: 99%;
+	background-color: red;
+}
+.p55 {
+	width: 55%;
+	height: 99%;
+	background-color: red;
+}
+.p54 {
+	width: 54%;
+	height: 99%;
+	background-color: red;
+}
+.p53 {
+	width: 53%;
+	height: 99%;
+	background-color: red;
+}
+.p52 {
+	width: 52%;
+	height: 99%;
+	background-color: red;
+}
+.p51 {
+	width: 51%;
+	height: 99%;
+	background-color: red;
+}
+.p50 {
+	width: 50%;
+	height: 99%;
+	background-color: red;
+}
+.p49 {
+	width: 49%;
+	height: 99%;
+	background-color: red;
+}
+.p48 {
+	width: 48%;
+	height: 99%;
+	background-color: red;
+}
+.p47 {
+	width: 47%;
+	height: 99%;
+	background-color: red;
+}
+.p46 {
+	width: 46%;
+	height: 99%;
+	background-color: red;
+}
+.p45 {
+	width: 45%;
+	height: 99%;
+	background-color: red;
+}
+.p44 {
+	width: 44%;
+	height: 99%;
+	background-color: red;
+}
+.p43 {
+	width: 43%;
+	height: 99%;
+	background-color: red;
+}
+.p42 {
+	width: 42%;
+	height: 99%;
+	background-color: red;
+}
+.p41 {
+	width: 41%;
+	height: 99%;
+	background-color: red;
+}
+.p40 {
+	width: 40%;
+	height: 99%;
+	background-color: red;
+}
+.p39 {
+	width: 39%;
+	height: 99%;
+	background-color: red;
+}
+.p38 {
+	width: 38%;
+	height: 99%;
+	background-color: red;
+}
+.p37 {
+	width: 37%;
+	height: 99%;
+	background-color: red;
+}
+.p36 {
+	width: 36%;
+	height: 99%;
+	background-color: red;
+}
+.p35 {
+	width: 35%;
+	height: 99%;
+	background-color: red;
+}
+.p34 {
+	width: 34%;
+	height: 99%;
+	background-color: red;
+}
+.p33 {
+	width: 33%;
+	height: 99%;
+	background-color: red;
+}
+.p32 {
+	width: 32%;
+	height: 99%;
+	background-color: red;
+}
+.p31 {
+	width: 31%;
+	height: 99%;
+	background-color: red;
+}
+.p30 {
+	width: 30%;
+	height: 99%;
+	background-color: red;
+}
+.p29 {
+	width: 29%;
+	height: 99%;
+	background-color: red;
+}
+.p28 {
+	width: 28%;
+	height: 99%;
+	background-color: red;
+}
+.p27 {
+	width: 27%;
+	height: 99%;
+	background-color: red;
+}
+.p26 {
+	width: 26%;
+	height: 99%;
+	background-color: red;
+}
+.p25 {
+	width: 25%;
+	height: 99%;
+	background-color: red;
+}
+.p24 {
+	width: 24%;
+	height: 99%;
+	background-color: red;
+}
+.p23 {
+	width: 23%;
+	height: 99%;
+	background-color: red;
+}
+.p22 {
+	width: 22%;
+	height: 99%;
+	background-color: red;
+}
+.p21 {
+	width: 21%;
+	height: 99%;
+	background-color: red;
+}
+.p20 {
+	width: 20%;
+	height: 99%;
+	background-color: red;
+}
+.p19 {
+	width: 19%;
+	height: 99%;
+	background-color: red;
+}
+.p18 {
+	width: 18%;
+	height: 99%;
+	background-color: red;
+}
+.p17 {
+	width: 17%;
+	height: 99%;
+	background-color: red;
+}
+.p16 {
+	width: 16%;
+	height: 99%;
+	background-color: red;
+}
+.p15 {
+	width: 15%;
+	height: 99%;
+	background-color: red;
+}
+.p14 {
+	width: 14%;
+	height: 99%;
+	background-color: red;
+}
+.p13 {
+	width: 13%;
+	height: 99%;
+	background-color: red;
+}
+.p12 {
+	width: 12%;
+	height: 99%;
+	background-color: red;
+}
+.p11 {
+	width: 11%;
+	height: 99%;
+	background-color: red;
+}
+.p10 {
+	width: 10%;
+	height: 99%;
+	background-color: red;
+}
+.p9 {
+	width: 9%;
+	height: 99%;
+	background-color: red;
+}
+.p8 {
+	width: 8%;
+	height: 99%;
+	background-color: red;
+}
+.p7 {
+	width: 7%;
+	height: 99%;
+	background-color: red;
+}
+.p6 {
+	width: 6%;
+	height: 99%;
+	background-color: red;
+}
+.p5 {
+	width: 5%;
+	height: 99%;
+	background-color: red;
+}
+.p4 {
+	width: 4%;
+	height: 99%;
+	background-color: red;
+}
+.p3 {
+	width: 3%;
+	height: 99%;
+	background-color: red;
+}
+.p2 {
+	width: 2%;
+	height: 99%;
+	background-color: red;
+}
+.p1 {
+	width: 1%;
+	height: 99%;
+	background-color: red;
+}
+.p0 {
+	width: 0%;
+	height: 99%;
+	background-color: red;
+}

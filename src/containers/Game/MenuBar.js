@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {getGames, joinGame, updateAttackType} from '../../actions/games'
-import {getUsers} from '../../actions/users'
-import {userId} from '../../jwt'
+import { connect } from 'react-redux'
+import { getGames, joinGame, updateAttackType } from '../../actions/games'
+import { getUsers } from '../../actions/users'
+import { userId } from '../../jwt'
 
 //COMPONENTS
 import RootButtons from '../../components/Game/menu/RootButtons'
@@ -16,10 +16,9 @@ import './MenuBar.css'
 
 export class MenuBar extends PureComponent {
   static PropTypes = {
-    game: PropTypes.string.isRequired,
+    game: PropTypes.string.isRequired
   }
-  static propTypes = {
-  }
+  static propTypes = {}
   state = {
     menu: 'offense'
   }
@@ -32,41 +31,44 @@ export class MenuBar extends PureComponent {
     }
   }
 
-  toggleState = (stateString) => {
+  toggleState = stateString => {
     this.setState({
       menu: stateString
     })
   }
 
-  selectAttackType = (selectedAttack) => {
-    const {game, updateAttackType} = this.props
+  selectAttackType = selectedAttack => {
+    const { game, updateAttackType } = this.props
     updateAttackType(game.id, selectedAttack)
   }
   hasPendingMove = () => {
-    const {players} = this.props.game
-    if(!players[1]) return
-    return players.find(player => player.userId === this.props.userId).pendingMove || this.props.game.winner
+    const { players } = this.props.game
+    if (!players[1]) return false
+    return (
+      players.find(player => player.userId === this.props.userId).pendingMove ||
+      this.props.game.winner
+    )
   }
 
   render() {
+    console.log(this.hasPendingMove())
     return (
-      <div className='bar'>
-        {
-          this.state.menu === 'root' &&
-          <RootButtons setMenu={this.toggleState}/>
-        }
-        {
-          this.state.menu === 'offense' &&
-          <OffenseButtons updateAttackType={this.selectAttackType} disable={this.hasPendingMove()}/>
-        }
-        {
-          this.state.menu === 'defense' &&
-          <DefenseButtons setMenu={this.toggleState}/>
-        }
-        {
-          this.state.menu === 'offensephysical' &&
-          <OffensePhysicalButtons setMenu={this.toggleState}/>
-        }
+      <div className="bar">
+        {this.state.menu === 'root' && (
+          <RootButtons setMenu={this.toggleState} />
+        )}
+        {this.state.menu === 'offense' && (
+          <OffenseButtons
+            updateAttackType={this.selectAttackType}
+            disable={this.hasPendingMove()}
+          />
+        )}
+        {this.state.menu === 'defense' && (
+          <DefenseButtons setMenu={this.toggleState} />
+        )}
+        {this.state.menu === 'offensephysical' && (
+          <OffensePhysicalButtons setMenu={this.toggleState} />
+        )}
       </div>
     )
   }
@@ -79,7 +81,13 @@ const mapStateToProps = (state, props) => ({
 })
 
 const mapDispatchToProps = {
-  getGames, getUsers, joinGame, updateAttackType
+  getGames,
+  getUsers,
+  joinGame,
+  updateAttackType
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuBar)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MenuBar)
