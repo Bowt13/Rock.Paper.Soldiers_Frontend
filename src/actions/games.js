@@ -1,5 +1,5 @@
 import * as request from 'superagent'
-import {baseUrl} from '../constants'
+import { baseUrl } from '../constants'
 
 export const ADD_GAME = 'ADD_GAME'
 export const UPDATE_GAME = 'UPDATE_GAME'
@@ -24,7 +24,7 @@ export const getGames = () => (dispatch, getState) => {
     .catch(err => console.error(err))
 }
 
-export const joinGame = (gameId) => (dispatch, getState) => {
+export const joinGame = gameId => (dispatch, getState) => {
   const state = getState()
   const jwt = state.currentUser.jwt
 
@@ -62,7 +62,7 @@ export const updateGame = (gameId, board) => (dispatch, getState) => {
   request
     .patch(`${baseUrl}/games/${gameId}`)
     .set('Authorization', `Bearer ${jwt}`)
-    .send({board})
+    .send({ board })
     .then(result => {
       dispatch({
         type: UPDATE_GAME_SUCCESS
@@ -71,14 +71,17 @@ export const updateGame = (gameId, board) => (dispatch, getState) => {
     .catch(err => console.error(err))
 }
 
-export const updateAttackType = (gameId, attackType) => (dispatch, getState) => {
+export const updateAttackType = (gameId, attackType) => (
+  dispatch,
+  getState
+) => {
   const state = getState()
   const jwt = state.currentUser.jwt
-  console.log({attackType: attackType})
+  console.log({ attackType: attackType })
   request
     .patch(`${baseUrl}/games/${gameId}`)
     .set('Authorization', `Bearer ${jwt}`)
-    .send({attackType: attackType})
+    .send({ attackType: attackType })
     .then(result => {
       dispatch({
         type: UPDATE_ATTACKTYPE_SUCCESS

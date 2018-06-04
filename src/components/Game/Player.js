@@ -6,19 +6,31 @@ export default class Player extends PureComponent {
     imgSrc: PropTypes.string.isRequired,
     side: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
-    attackType: PropTypes.string.isRequired,
-    character: PropTypes.string.isRequired,
+    attackType: PropTypes.string,
+    character: PropTypes.string.isRequired
   }
 
   render() {
     return (
       <div>
-      {this.props.status === 'idle' &&
-        <img className={`${this.props.character}-${this.props.side}-${this.props.status}`} src={this.props.imgSrc} alt={this.props.imgSrc}/>
-      }
-      {this.props.status !== 'idle' &&
-        <img className={`${this.props.character}-${this.props.side}-${this.props.status}-${this.props.attackType}`} src={this.props.imgSrc} alt={this.props.imgSrc}/>
-      }
+        {this.props.status === 'idle' && (
+          <img
+            className={`${this.props.character}-${this.props.side}-${
+              this.props.status
+            }`}
+            src={this.props.imgSrc}
+            alt={this.props.imgSrc}
+          />
+        )}
+        {this.props.status !== 'idle' && (
+          <img
+            className={`${this.props.character}-${this.props.side}-${
+              this.props.status
+            }-${this.props.attackType}`}
+            src={this.props.imgSrc}
+            alt={this.props.imgSrc}
+          />
+        )}
       </div>
     )
   }
